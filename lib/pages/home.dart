@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone_project/components/cover.dart';
+import 'package:netflix_clone_project/Models/cover_list.dart';
+import 'package:netflix_clone_project/components/cover_card.dart';
 import 'package:netflix_clone_project/components/cover_list_tiltle.dart';
 
 class HomePage extends StatelessWidget {
@@ -180,20 +181,26 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 150,
-                    child: ListView(
+                    child: ListView.builder(
+                      itemCount: populares.length,
+                      itemBuilder: (context, index) {
+                        return CoverCard(url: populares[index].url);
+                      },
                       scrollDirection: Axis.horizontal,
-                      children: const [
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                      ],
+                      // children: const [
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                        
+                      // ],
                     ),
                   ),
                   const CoverListTitle(title: 'Séries premiadas'),
@@ -202,20 +209,12 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 150,
-                    child: ListView(
+                    child: ListView.builder(
+                      itemCount: premiados.length,
+                      itemBuilder: (context, index) {
+                        return CoverCard(url: premiados[index].url,);
+                      },
                       scrollDirection: Axis.horizontal,
-                      children: const [
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                      ],
                     ),
                   ),
                   const CoverListTitle(title: 'Lançamentos'),
@@ -224,20 +223,25 @@ class HomePage extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 150,
-                    child: ListView(
+                    child: ListView.builder(
+                      itemCount: lancamentos.length,
+                      itemBuilder: (context, index) {
+                        return CoverCard(url: lancamentos[index].url);
+                      },
                       scrollDirection: Axis.horizontal,
-                      children: const [
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                        Cover(),
-                      ],
+                      // children: const [
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      //   // CoverCard(),
+                      // ],
                     ),
                   )
                 ],
